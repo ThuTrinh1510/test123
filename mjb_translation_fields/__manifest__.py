@@ -1,7 +1,7 @@
 {  
     "name": "Translation Fields",  
     "author": "Majorbird",  
-    "version": "18.0.0.1",
+    "version": "18.0.0.2",
     "category": "Hidden/Tools",
     "summary": "The module makes language translations in the Odoo system more efficient and user-friendly. The module adds the ability to view and edit the translations of a field in multiple languages, all from the same form view, simultaneously",  
     "website": "https://majorbird.cn",
