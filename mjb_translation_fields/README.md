@@ -15,32 +15,32 @@ This module introduces a checking rule for any newly created field. If the field
 ### Installation
 The Translation Fields module can be found in the app list. To install, simply search for it and click install.
 
-![image1](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image1.png?inline=false)
+![image1](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image1.png?inline=false)
  
 ### Accessing the 'Translation Fields' View
 Select the 'Translation Fields' submenu which can be found in the 'Translation' menu located in the Settings.
 
-![image2](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image2.png?inline=false)
+![image2](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image2.png?inline=false)
  
 ### Configuring Information
 Complete these steps: Select 'Model', Select 'Field', Select 'Language', Toggle the active button. If a field in the specified language is created, an action is applied or a prompt message appears.
 
-![image3](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image3.png?inline=false) 
-![image4](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image4.png?inline=false)
+![image3](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image3.png?inline=false) 
+![image4](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image4.png?inline=false)
  
 ### Saving Configuration and Enjoy
 Please click the 'Save' button after completing your configuration then enjoy function
 
-![image5](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image5.png?inline=false) 
-![image6](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image6.png?inline=false) 
-![image7](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image7.png?inline=false)
+![image5](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image5.png?inline=false) 
+![image6](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image6.png?inline=false) 
+![image7](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image7.png?inline=false)
  
 ### Initialization
 Select the field that needs to be initialized and then click the 'Initialize' button.
 
-![image8](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image8.png?inline=false) 
-![image9](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image9.png?inline=false) 
-![image10](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/image10.png?inline=false)
+![image8](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image8.png?inline=false) 
+![image9](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image9.png?inline=false) 
+![image10](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/image10.png?inline=false)
   
 ## Features
 
@@ -58,8 +58,8 @@ Majorbird is a leading software engineering and consulting firm based in Shenzhe
 
 [Contact us](https://majorbird.cn/contactus)
 
-![Majorbird logo](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/logo.png?inline=false)
-![Silver logo](https://gitlab.com/mjb.customers/out/enroutebizz//raw/17.0/mjb_translation_fields/static/description/logo_silver.png?inline=false) 
+![Majorbird logo](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/logo.png?inline=false)
+![Silver logo](https://gitlab.com/mjb.customers/out/enroutebizz//raw/18.0/mjb_translation_fields/static/description/logo_silver.png?inline=false) 
 
 ### Majorbird Vietnam Office
 Tower SAV1, The Sun Avenue Apartment, Hochiminh, Vietnam

@@ -7,9 +7,9 @@ class MjbTranslationFields(models.Model):
     _description = "Translation Fields"
 
     x_model_id = fields.Many2one('ir.model', string="Model")
-    x_field_id = fields.Many2one('ir.model.fields', string="Field", domain="['&',('model_id','=',x_model_id),'|',('ttype','=','text'),('ttype','=','char')]")
+    x_field_id = fields.Many2one('ir.model.fields', string="Field", domain="['&','&',('model_id','=',x_model_id),('translate','=',True),'|',('ttype','=','text'),('ttype','=','char')]")
     x_active = fields.Boolean(string="Active")
-    x_lang_ids = fields.Many2many('res.lang',string="Language")
+    x_lang_ids = fields.Many2many('res.lang', string="Language")
 
     def confirm_init(self):
 
