@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="views_mjb_translation_fields_tree" model="ir.ui.view">
+        <field name="name">x_mjb_translation_fields.tree</field>
+        <field name="model">x_mjb_translation_fields</field>
+        <field name="arch" type="xml">
+            <tree string="MJB Translation Fields" editable="bottom">
+                <header>
+                    <button name="confirm_init" type="object" string="Initialize" class="btn-primary" />
+                </header>
+                <field name="x_model_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                <field name="x_field_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                <field name="x_active" widget='boolean_toggle'/>
+                <field name="x_lang_ids" widget='many2many_tags' options="{'no_create': True, 'no_create_edit':True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mjb_translation_fields_action" model="ir.actions.act_window">
+        <field name="name">Translation Fields</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">x_mjb_translation_fields</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Translate whichever fields you want !
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="mjb_translation_fields_menu"
+              name="Translation Fields"
+              parent="base.menu_translation"
+              action="mjb_translation_fields_action"/>
+</odoo>

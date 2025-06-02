@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="mjb_translation_fields_server_action" model="ir.actions.server">
+        <field name="name">MJB - Action Translation Fields</field>
+        <field name="model_id" ref="mjb_translation_fields.model_x_mjb_translation_fields"/>
+        <field name="binding_model_id" ref="mjb_translation_fields.model_x_mjb_translation_fields"/>
+        <field name="state">code</field>
+        <field name="code">
+field_checked = ''
+if record.x_active:
+  for lang in record.x_lang_ids:
+      all_fields = str(env[record.x_model_id.model].fields_get())
+      field_name = record.x_field_id.name
+      if 'x_studio_' in field_name:
+        field_checked_x = str(field_name) + '_' + str(lang.code).lower()
+        field_checked = env['ir.model.fields'].search([('model_id','=',record.x_model_id.model),('name','=',field_checked_x)])
+        if not field_checked:
+          raise UserError(field_checked_x+' is not existing')
+      else:
+        field_checked_1 = 'x_' + str(field_name) + '_' + str(lang.code)
+        field_checked_2 = 'x_studio_' + str(field_name) + '_' + str(lang.code).lower()
+        field_checked = env['ir.model.fields'].search([('model_id','=',record.x_model_id.model),('name','in',[field_checked_1,field_checked_2])])
+        if not field_checked:
+          raise UserError(field_checked_1 + ' or '+ field_checked_2 +' is not existing')
+      python_code =f"""
+detect_field=['{field_checked.name}']
+detect_lang='{lang.code}'
+for field in detect_field:
+  env.cr.execute('''SELECT %s FROM %s WHERE id = %s''' % ("{field_name}", record._name.replace('.', '_'), record.id))
+  a=env.cr.fetchall()
+  ori_vals=a[0][0]
+  update_vals=ori_vals
+  if update_vals:
+    if not record[field]:
+      update_vals[detect_lang]= ''
+    else:
+      update_vals[detect_lang]=record[field]
+  else:
+    update_vals = {{}}
+    update_vals[detect_lang]=record[field]
+  env.cr.execute('''update %s set %s='%s' where id = %s''' % (record._name.replace('.', '_'), "{field_name}", str(update_vals).replace("'", '"'), record.id))
+"""
+      if field_checked:
+        server_action = env['ir.actions.server'].create({
+            'name' : 'Action Translation Fields model %s field %s'%(record.x_model_id.name,field_checked.name),
+            'model_id' : record.x_model_id.id,
+            'binding_model_id': record.x_model_id.id,
+            'state': 'code',
+            'code': python_code
+            })
+        auto_action = env['base.automation'].create({
+                'name': 'Auto Translation Fields model %s field %s'%(record.x_model_id.name,field_checked.name),
+                'active': True,
+                'model_id': record.x_model_id.id,
+                'trigger': 'on_create_or_write',
+                'trigger_field_ids': field_checked.ids,
+                'action_server_ids': [(4, server_action.id)]
+            })
+        </field>
+    </record>
+
+    <record id="auto_action_mjb_translation_fields" model="base.automation">
+        <field name="name">MJB - Auto Action Translation Fields</field>
+        <field name="model_id" ref="mjb_translation_fields.model_x_mjb_translation_fields"/>
+        <field name="trigger">on_create_or_write</field>
+        <field name="action_server_ids" eval="[(4, ref('mjb_translation_fields_server_action'))]"/>
+    </record>
+</odoo>
